@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* *모든 요소 */
+.전체 {
+    width: 352px;
+    background-color: #d1bebe;
+    margin: auto;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+/* 마진 오토랑 마진 탑 위치 바뀌면 안 됨 */
+.전체 .자식 {
+    width: 104px;
+    height: 104px;
+    background-color: rgb(230, 195, 206);
+    float: left;
+    margin-right: 20px;
+    text-align: center;
+    line-height: 104px;
+    color: white;
+}
+
+.전체 .첫째 {
+    background-image: url(img/img-1.png);
+    transition: 0.3s;
+}
+
+/* img 치고 엔터나 슬래시 누르면 됨 */
+.전체 .첫째:hover {
+    background-image: url(img/img-2.png);
+}
+
+/* 가상으로 마우스 커서 올리면 나타남 */
+
+.전체 .둘째 {
+    background-image: url(img/img-2.png);
+}
+
+.전체 .둘째::before {
+    content: "before";
+}
+
+.전체 .둘째::after {
+    content: "after";
+}
+
+.전체 .셋째 {
+    margin-right: 0;
+    background-image: url(img/img-3.png);
+}
+
+.전체 .약 {
+    clear: both;
+}
+
+
+
+
+.치매약::after{             /* after : 인라인요소(글자와 같은 성질을 가진 것, 공간 인식 불가) */
+    content: ""; 
+    display: block;
+    clear:both;
+    }
+
+
+
+.부모 {
+    background-color: #c5ffdf;
+    margin: auto;
+    margin-top: 30px;
+    width: 1000px;
+    padding: 20px;
+}
+
+
+
+.부모 .child {
+    background-color: #b5add3;
+    width: 33.3333%;
+    float: left;
+}
+
+.부모 .일동 {}
+
+.부모 .이동 {}
+
+.부모 .삼동 {}
+
+
+
+
+
+.삼촌 {
+    background-color: #c5ffdf;
+    margin: auto;
+    margin-top: 30px;
+    width: 1000px;
+    padding: 20px;
+}
+
+.삼촌 .child {
+    background-color: #b5add3;
+    width: 33.3333%;
+    float: left;
+}
