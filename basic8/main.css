@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.부모 { 
+    position: relative;
+    left: 200px;
+    top: 200px;
+    margin-top: 100px;
+    margin-left: 100px;
+    background-color: #3A98B9;
+    width: 1000px;
+    background-image: url(https://manual.notch.one/0.9.23/en/docs/nodes/generators/grid/img/node-generators-grid-img.jpg);
+    background-size: cover;
+    margin-bottom: 3000px;
+}
+
+.부모 .자식 {
+    height: 200px;
+    width: 200px;
+}
+
+.부모 .첫째 {
+    background-color: #EEEEEE;
+    left: 400px; /* 나의 왼쪽에 공간을 만드는 거라 결국 오른쪽으로 이동 */
+    position: relative; /* 원래 자기 자리를 기억함 그래서 둘째와 셋째가 이동 X 주변에 영항을 안 줌*/
+}
+
+.부모 .둘째 { /* 포지션이 없으면 부모한테 감 부모도 없으면 body한테 감 */
+    background-color: #FFF1DC;
+    left: 50px;
+    top: 0;
+    position:absolute; 
+}               
+
+.부모 .셋째 {
+    background-color: #E8D5C4;
+    position: static; /* 기본값 */
+}
+
+.부모 .넷째{
+    background-color: #A7727D;
+    position: fixed; /* 화면에 붙어있음 그래서 스크롤 내려도 계속 따라옴, 맨 위로 가기 버튼 */
+    right: 0;
+    top: 200px; 
+}
