@@ -1,8 +1,29 @@
-@charset "UTF-8"
+@charset "UTF-8";
 
 
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
-  h1 {
-    color : #FBD85D;
-    font-family: 'Bagel Fat One', cursive;
-    font-size: 200px;}
+* {
+  margin: 0;
+  padding: 0;
+  color: #FBD85D;
+  font-family: 'Jua', sans-serif;
+}
+
+h1 {
+  margin: auto;
+  margin-top: 50px;
+  width: 768px;
+  font-size: 50px;
+  background-color: #D2E0FB;
+  color: #FBD85D;
+  font-display: center;
+}
+
+
+p {font-size: 30px;}
+
+.폼폼푸린 {
+  margin: auto;
+  width: 768px;
+}
