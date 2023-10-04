@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  color: #FBD85D;
+  font-family: 'Jua', sans-serif;
+}
+
+h1 {
+  margin: auto;
+  margin-top: 50px;
+  width: 768px;
+  font-size: 50px;
+  background-color: #D2E0FB;
+  color: #FBD85D;
+  text-align: center;
+}
+
+
+img {
+  margin: auto;
+  display: block;
+}
+
+p {font-size: 30px;}
+
+.main {
+  margin: auto;
+  width: 768px;
+}
