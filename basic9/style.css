@@ -1,0 +1,174 @@
+@charset "UTF-8";
+
+/* 새로고침 안 될 때 컨트롤 시프트 알 */
+/* 🎀 이모티콘 : 윈도우 + . */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.치료::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+/* 가상공간 인라인요소 */
+
+
+.전체 {
+    margin: auto;
+    /* 항상 1000px가 중앙에 배치 */
+    margin-top: 30px;
+    /* 항상 마진 밑에 써야 함 */
+    width: 1000px;
+    background-color: #FACBEA;
+}
+
+.전체 .첫번째 {
+    background-color: #FFE4D6;
+    padding: 20px;
+}
+
+.전체 .첫번째 .자식 {
+    float: left;
+    background-color: #D988B9;
+    height: 200px;
+    width: 24.25%;
+    margin-right: 1%;
+    /* 전체가 101%가 됨 그래서 자식4가 밑으로 밀림 */
+}
+
+.전체 .첫번째 .자식.자식1 {
+    position: relative;
+}
+
+.전체 .첫번째 .자식.자식1 .상 {
+    background-color: #5B0888;
+    width: 100%;
+    /* 상의 부모는 자식1 - 자식1의 넓이와 높이를 100%로 맞춰라 */
+    height: 100%;
+    background-image: url(https://img.megabox.co.kr/SharedImg/2022/12/19/1KbKPrL6sWAk41js6O69WcdKXwaTeobK_1100.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.전체 .첫번째 .자식.자식1 .하 {
+    background-color: #618264;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    /* 내 공간과 부모의 공간을 0 */
+    top: 0;
+    /* 내 공간과 부모의 공간을 0 */
+    background-image: url(https://img.megabox.co.kr/SharedImg/2022/12/19/iFw18pQDvdY0Zgtm33P43LBQ9M93nXGP_1100.jpg);
+    background-size: cover;
+    background-position: center;
+    transition: 0.3s;
+}
+
+.전체 .첫번째 .자식.자식1 .하:hover {
+    opacity: 0;
+}
+
+.전체 .첫번째 .자식.자식2 {
+    position: relative;
+    /* 자식의 기준을 잡아주기 위함 여기에 붙어라! */
+    background-image: url(https://img.megabox.co.kr/SharedImg/2023/07/05/un2dXx2gcX3TRnCTe4LBOLzw2LrY3QyO_1100.jpg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.전체 .첫번째 .자식.자식2 .상 {
+    background-color: #5CD2E6;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    /* 자식의 공간만큼 넓이를 차지, 그래서 넓이를 설정해야한다 */
+    left: 100%;
+    /* 왼쪽에 공간 오십프로가 생겨서 결과적으로 오른쪽으로 이동함 */
+    top: 0;
+    background-image: url(https://img.megabox.co.kr/SharedImg/2023/05/17/f9E9uDyLQ2LM9NOa7r0MSHYxrgm7LpMu_1100.jpg);
+    background-size: cover;
+    background-position: center;
+    transition: 0.3s;
+    /* 위아래 전부 센터 */
+}
+
+.전체 .첫번째 .자식.자식2:hover .상 {
+    left: 0;
+}
+
+
+
+.전체 .첫번째 .자식.자식3 {
+    position: relative;
+    overflow: hidden;
+}
+
+.전체 .첫번째 .자식.자식3 .yt {
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1.4);
+    /* (x값,y값) %기준이 자기 자신, 자기 몸을 이동시킴 정중앙에 맞춰줌 */
+}
+
+.전체 .첫번째 .자식.자식4 {
+    margin-right: 0;
+}
+
+.전체 .첫번째 .자식.자식4 iframe {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+.전체 .두번째 {
+    background-color: #8EACCD;
+    padding: 20px;
+}
+
+.전체 .두번째 .자식 {
+    background-color: #D7E5CA;
+    width: 200px;
+    height: 400px;
+    float: left;
+    margin-right: 30px;
+    padding: 10px;
+    border: 5px solid #0F2C59;
+    box-sizing: border-box;
+    /* 내 공간 안에 border를 포함한다 */
+    /* 공간 = 넓이 + 패딩 + border(선) / 공간 = 높이 + 패딩 + border(선) */
+} 
+
+.전체 .두번째 .자식.자식1 {}
+
+.전체 .두번째 .자식.자식2 {}
+
+
+/* 📍 패딩 📍 */
+.전체 .두번째 .자식.자식3 {
+    padding: 10px 20px 20px 40px;
+    /* padding: top right bottom left 시계 방향*/
+    padding: 20px 30px 40px;
+    /* 위 좌우 아래 */
+    padding: 20px 40px;
+    /* 상하 좌우 */
+    padding: 20px;
+    /* 상하좌우 */
+    padding: 2%;
+    /* 상하좌우에 2% */
+    /* 패딩과 마진의 %(백분율) 기준은 부모의 넓이 */
+}
+
+.전체 .두번째 .자식.자식4 {
+    margin-right: 0px;
+}
+

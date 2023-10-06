@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.깨짐현상방지::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+/* 📍 이미지는 인라인요소 글자처럼 내가 모르는 공간이 있다 vertical-align:middle로 해결 가능
+글자는 내가 모르는 상하좌우 공간이 있다 */
+
+/* 📍 아이디를 호출하는 방법 : 아이디는 전체 사이트에 유일한 이름이어야 한다
+아이디는 하나의 이름만 가져야 한다. 아이디를 부를 때는 앞에 . 대신에 # */
+
+#전체 {
+    background-color: #47A992;
+    width: 1000px;
+    /* margin: 상하좌우; */
+    margin: 0 auto;
+    margin: 30px auto 0;
+    /* - 위 좌우 아래 */
+
+    /* margin: 0 auto는 다음과 같다
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto; */
+}
+
+
+#전체 .놀부 {
+    padding: 20px;
+}
+
+#전체 .놀부 .자식 {
+    width: 23.5%;
+    /* 4개라서 25*4=100% 각자 25%씩 나눠가짐 */
+    margin-right: 2%;
+    float: left;
+    background-color: #482121;
+}
+
+#전체 .놀부 .자식.자식1 {}
+
+#전체 .놀부 .자식.자식1 img {
+    width: 100%;
+}
+
+#전체 .놀부 .자식.자식2 {
+    padding: 10px;
+    border: 5px solid #9BABB8;
+    box-sizing: border-box;
+    background-image: url(https://file.osen.co.kr/article/2023/08/12/202308121359772151_64d713b57b9ff.jpg)
+        /* 공간의 넓이=10px + 5px + 25% + 10px + 5px
+       공간의 높이=10px + 5px + 자식의 높이 + 10px + 5px */
+
+        /* 공간의 넓이=padding-left + border-left+width+padding-right+border-right
+       공간의 높이=padding-top + border-top+height+padding-bottom+border-bottom*/
+}
+
+#전체 .놀부 .자식.자식3 {
+    height: 200px;
+    background-image: url(https://cdn-icons-png.flaticon.com/128/3419/3419250.png);
+    /* 작은 크기의 사진을 넣으면 배경을 채우기 위해 반복해서 나옴 */
+    background-size: 50px;
+    /* 이미지 크기 조절 */
+    background-repeat: no-repeat;
+    /* 반복X */
+    background-position: center center;
+    /* = 50% */
+    /* (x축 y축=값이 같을 때 단축할 수 있음) */
+    background-position: 50% bottom;
+    /* y축은 bottom에 위치 */
+    /* 백그라운드와 관련된 것은 앞에 백그가 꼭 붙는다. 이미지 태그처럼 움직이지 않음. -값도 가능 */
+}
+
+
+#전체 .놀부 .자식.자식4 {
+    position: relative;
+    /* 주변에 영향 없고 기준을 잡기 위함. 텍스트4는 자식4밖으로 벗어날 수 없음 */
+    margin-right: 0;
+    height: 200px;
+    background-image: url(https://i.namu.wiki/i/18PmzWOWDLZ7yNLTz0wME-gyKOdV-aCTpKKtAtpxA8csX9Ve03G6WYXaGomgKEAS7FB5e9A2rT3sfmMj0MCJrg.webp);
+    background-size: cover;
+    /* 백그라운드사이즈커버:사진크기를 넓이에 맞춤 넘치는 건 상관 안 함 모자라면 넓힘 */
+    background-position: center;
+    background-position: 0 50%;
+    overflow: hidden;
+    /* 자식4 안에서만 텍스트가 나타난다 */
+}
+
+#전체 .놀부 .자식.자식4 .text {
+    background-color: #E57C23;
+    position: absolute;
+    left: 50%;
+    /* 기준 : 부모의 넓이 */
+    top: -100%;
+    /* 기준 : 부모의 높이 */
+    padding: 10px 30px;
+    transform: translate(-50%, -50%);
+    /* transform: translate(x축, y축). 기준 : text 나 자신 */
+    border-radius: 10px;
+    /* 모서리 원의 반지름 */
+    opacity: 0;
+    /* 0.5=50%. 0=존재는 하는데 눈에 안 보일 뿐 */
+    color: white;
+    transition: 0.3s;
+}
+
+#전체 .놀부 .자식.자식4:hover .text {
+    opacity: 1;
+    top: 50%;
+}
