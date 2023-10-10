@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>111</title>
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- #은 id를 부른다 -->
+    <div id="wrap">
+        <div id="header" class="clearfix">
+            <!-- id는 별도로 클래스를 만들어줘야한다 -->
+            <h1>
+                <a href="#">
+                    <img src="images/logo.jpg" alt="롯데월드">
+                </a>
+            </h1>
+            <div class="nav">
+                <ul class="clearfix">
+                    <li>
+                        <a href="#">즐길거리</a>
+                        <ul class="submenu">
+                            <!-- ul.submenu>li*4>a{subMenu-$} -->
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">요금/우대혜택</a>
+                        <ul class="submenu">
+                            <li><a href="">subMenu-1</a></li>
+                            <li><a href="">subMenu-2</a></li>
+                            <li><a href="">subMenu-3</a></li>
+                            <li><a href="">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">참여프로그램</a>
+                        <ul class="submenu">
+                            <li><a href="">subMenu-1</a></li>
+                            <li><a href="">subMenu-2</a></li>
+                            <li><a href="">subMenu-3</a></li>
+                            <li><a href="">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">이용가이드</a>
+                        <ul class="submenu">
+                            <li><a href="">subMenu-1</a></li>
+                            <li><a href="">subMenu-2</a></li>
+                            <li><a href="">subMenu-3</a></li>
+                            <li><a href="">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">소통서비스</a>
+                        <ul class="submenu">
+                            <li><a href="">subMenu-1</a></li>
+                            <li><a href="">subMenu-2</a></li>
+                            <li><a href="">subMenu-3</a></li>
+                            <li><a href="">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <!-- li는 블록요소라서 한줄에 하나씩 a는 인라인 -->
+                </ul>
+            </div>
+        </div>
+        <!-- //header -->
+        <div id="banner">
+            <!-- #banner = <div id="banner"> -->
+            <div class="slidelist">
+                <div class="slideImg">
+                    <h2>이미지 1</h2>
+                    <img src="images/banner01.jpg" alt="크리스마스">
+                </div> <!-- //slideImg -->
+                <div class="slideImg">
+                    <h2>이미지 2</h2>
+                    <img src="images/banner01.jpg" alt="크리스마스">
+                </div> <!-- //slideImg -->
+                <div class="slideImg">
+                    <h2>이미지 3</h2>
+                    <img src="images/banner01.jpg" alt="크리스마스">
+                </div> <!-- //slideImg -->
+            </div> <!-- //slidelist -->
+        </div> <!-- //banner -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <!-- 주소 다음에 >< 여기에 넣으면 안 됨 -->
+    <script>
+        /* menu 
+        menu */
+
+        //한줄주석 앞에 슬래시 2개
+
+        console.log("방가방가")
+        /* alert("반갑습니다.") */
+
+        //menu 
+        $('.nav>ul>li').mouseover(function () {
+            console.log($(this))
+            $(this).find('.submenu').stop().slideDown();
+        });
+
+        $('.nav>ul>li').mouseout(function () {
+            $(this).find('.submenu').stop().slideUp();
+        });
+    </script>
+</body>
+
+</html>
