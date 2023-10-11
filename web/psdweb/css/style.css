@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+/* 📍 reset.css 연결하는 방법 */
+@import url(reset.css);
+
+
+/* font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto', sans-serif; */
+
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+}

@@ -1,0 +1,197 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    /* 16px이 기본값, 크롬에서 10이하는 변화 없음 */
+}
+
+.clearfix::after {
+    /* 인라인요소 */
+    content: "";
+    clear: both;
+    display: block;
+}
+
+
+/* reset */
+li {
+    list-style: none;
+}
+
+/* 블릿문자 삭제 */
+
+a {
+    color: #333;
+    text-decoration: none;
+    /* 밑줄 삭제 */
+}
+
+
+/* wrap */
+#wrap {
+    width: 1000px;
+    margin: 0 auto;
+    /* 중앙에 옴 */
+}
+
+/* 📍 header */
+#header {}
+
+#header h1 {
+    float: left;
+    /* 블록요소라서 한줄 다 차지함 나란히 정렬하려면 h1에도 플롯을 줘야 한다 */
+    width: 120px;
+}
+
+#header h1 a img {
+    width: 100%;
+}
+
+#header .nav {
+    float: right;
+    text-align: center;
+    /* 자신X 자식 중 인라인요소를 중앙 정렬 명령은 블록요소한테 한다? */
+    /* 블록 요소의 중앙 정렬은 margin-auto */
+    margin-top: 20px;
+}
+
+#header .nav ul {}
+
+#header .nav ul li {
+    position: relative;
+    float: left;
+    width: 120px;
+}
+
+#header .nav ul li a {
+    /* a태그는 인라인 요소 */
+    background-color: #ccc;
+    display: block;
+    /* 이게 없으면 글자에만 태그가 걸림 근데 블락을 하면 칸 전체에 태그됨 */
+    padding: 20px 15px;
+    transition: 0.3s;
+    /* = 300ms */
+}
+
+#header .nav ul li a:hover {
+    background-color: #ddd;
+}
+
+#header .nav ul li .submenu {
+    display: none;
+    position: absolute;
+    top: 60;
+    left: 0;
+    z-index: 10;
+    /* position이 있어야 실행됨 */
+}
+
+/* 📍 banner */
+#banner {
+    height: 378px;
+    overflow: hidden;
+}
+
+#banner .slidelist {
+    position: relative;
+}
+
+#banner .slidelist .slideImg {
+    position: relative;
+}
+
+#banner .slidelist .slideImg h2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 30px;
+    border-radius: 20px;
+    color: #fff;
+}
+
+#banner .slidelist .slideImg img {
+    /* img태그는 인라인 요소인데 넓이를 인식한다 */
+    width: 100%;
+    /* 페이지 크기에 100% 맞춤 */
+    display: block;
+}
+
+/* ✨ img태그의 특징
+인라인요소(글자와 같은 성질) : 예측하지 못하는 공간을 가지고 있음
+해결 방법
+1. display:block;
+2. vertical-align:middle or top; */
+
+
+/* 📍 content */
+#content1 {
+    margin-top: 15px;
+}
+
+#content1 .notice {
+    position: relative;
+    border: 1px solid #ccc;
+    height: 218px;
+    float: left;
+    width: 49%;
+    box-sizing: border-box;
+    /* 패딩 안에 선이 들어온다 */
+    padding: 30px;
+}
+
+#content1 .ad {
+    background-color: #993030;
+    height: 218px;
+    float: right;
+    width: 49%;
+}
+
+
+#content1 .notice ul {
+}
+
+#content1 .notice ul li {
+    float: left;
+    margin-right: 10px;
+}
+
+#content1 .notice ul li a {
+    font-size: 24px;
+    color: #999;
+    font-weight: bold;
+}
+
+#content1 .notice ul li.active a {
+    color: #000;
+}
+
+#content1 .notice ul li ul {
+    position: absolute;
+    left: 30px;
+    top: 70px;
+}
+
+#content1 .notice ul li ul li {}
+
+#content1 .notice ul li ul li a {
+    font-size: 16px;
+    float: left;
+    width: 68%;
+    /* 말줄임말 세트 */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    /* 말줄임말 세트*/
+
+    font-weight: normal;
+    /* 폰트 두께 초기화 */
+}
+
+#content1 .notice ul li ul li span {
+    float: right;
+
+}
