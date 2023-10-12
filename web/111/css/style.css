@@ -143,16 +143,7 @@ a {
     padding: 30px;
 }
 
-#content1 .ad {
-    background-color: #993030;
-    height: 218px;
-    float: right;
-    width: 49%;
-}
-
-
-#content1 .notice ul {
-}
+#content1 .notice ul {}
 
 #content1 .notice ul li {
     float: left;
@@ -195,3 +186,142 @@ a {
     float: right;
 
 }
+
+
+/* 📍ad.img */
+#content1 .ad {
+    background-color: #993030;
+    height: 218px;
+    float: right;
+    width: 49%;
+}
+
+#content1 .ad a img {
+    width: 100%;
+}
+
+
+/* 📍 팝업 */
+.layer-bg {
+    display: none;
+    position: fixed;
+    /* 화면이 부모 화면을 꽉 채움 */
+    left: 0;
+    /* 내 왼쪽과 부모의 왼쪽 */
+    top: 0;
+    right: 0;
+    /* 내 오른쪽과 부모의 오른쪽 */
+    bottom: 0;
+    /* 나의 바닥과 부모의 바닥의 거리 부모의 안쪽이 기준 */
+    /* left right top bottom = 0 = width: 100%;, height:100% ; */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* 내 왼쪽을 부모 왼쪽에 붙이고 나의 머리를 부모 머리에 붙이고 내 오른쪽을 위를 아래를 다 붙임 부모와 나의 거리가 0 부모를 꽉 채움 */
+}
+
+.layer-bg .layer {
+    /* 자식이 position: absolute;일 때 기준이 되는 부모가 position:static;가 기본값인데 position이 relative, absolute, fixed라면 기준이 될 수 있다
+    position:static;일 때는 기준이 될 수 있다 */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* left+top+transform 흰색 배경이 중앙에 옴 */
+    width: 500px;
+    height: 500px;
+    background-color: #fff;
+    padding: 30px;
+}
+
+.layer-bg .layer h2 {
+    font-size: 35px;
+}
+
+.layer-bg .layer .close {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    /* 부모의 밑과 오른쪽에서 30픽셀 떨어져있겠다 */
+    font-weight: bold;
+    font-size: 30px;
+}
+
+
+#content2 {}
+
+#content2 h2 {}
+
+#content2 ul {}
+
+#content2 ul li {
+    float: left;
+    width: 24.25%;
+    margin-right: 1%;
+}
+
+#content2 ul li:last-child {
+    margin-right: 0;
+}
+
+#content2 ul li div {
+    overflow: hidden;
+    /* 사진이 칸 안에서만 커짐 */
+}
+
+#content2 ul li div img {
+    width: 100%;
+    transition: 0.3s;
+}
+
+#content2 ul li div:hover img {
+    transform: scale(1.2);
+    /* 120% */
+
+}
+
+#content2 ul li span {}
+
+
+
+/* 📍 footer */
+
+#footer {
+    padding: 30px 0;
+    margin-top: 30px;
+    border-top: 1px solid #ccc;
+    /* 위쪽만 선 생김 */
+    /* 
+    border: 1px solid #ccc;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ccc; */
+}
+
+#footer address {
+    /* address태그는 원래 기울림체라서 일반으로 바꿔줘야 한다 */
+    font-style: normal;
+}
+
+#footer address ul {
+    width: 535px;
+
+}
+
+#footer address ul li {
+    /* inline요소는 공간을 인식하지 못한다 패딩, 마진의 상하값이 적용 안 됨 좌우값은 적용됨 그래서 밑에 있는 카피라이트가 안 밀림
+    dispaly-inline-block; 인라인요소이나 블록요소처럼 넓이를 인식한다 */
+    display: inline; /* 내가 예측하지 못하는 공간을 가지고 있음 */
+    padding: 0 15px 0 10px;
+}
+
+#footer address p {
+    text-transform: uppercase;
+    /* 대문자 */
+    /* text-transform: lowercase; 소문자 */
+    padding-top: 30px;
+    
+}
+
+#footer address ul li.left {
+    padding-left: 0;
+}
+
