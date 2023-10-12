@@ -4,10 +4,31 @@
 @import url(reset.css);
 
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@300&display=swap');
+
 /* font-family: 'Open Sans', sans-serif;
 font-family: 'Roboto', sans-serif; */
 
 
-h1 {
-    font-family: 'Open Sans', sans-serif;
+/* 📍 layout */
+
+.container {
+    width: 1146px;
+    background-color: black;
+    margin: 0 auto;
 }
+
+body {
+    font-size: 18px;
+    line-height: 27px;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+}
+
+.container .logo {}
+
+.container .logo nav {}
+
+.container .logo ul {}
+
+.container .logo ul li {}
